@@ -1,0 +1,29 @@
+# Project: ¹þ·òÂü±àÒëÂë
+# Makefile created by Dev-C++ 6.5
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = main.o
+LINKOBJ  = main.o
+LIBS     = -L"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/lib" -L"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/i686-w64-mingw32/lib" -static-libstdc++ -static-libgcc -g3
+INCS     = -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/include" -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/i686-w64-mingw32/include" -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include" -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include-fixed"
+CXXINCS  = -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/include" -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/i686-w64-mingw32/include" -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include" -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.2.0/include-fixed" -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/include/c++/10.2.0" -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/include/c++/10.2.0/i686-w64-mingw32" -I"C:/Users/yang2/Desktop/Dev-Cpp/MinGW32/include/c++/10.2.0/backward"
+BIN      = ¹þ·òÂü±àÒëÂë.exe
+CXXFLAGS = $(CXXINCS) -Wall -Wextra -g3
+ENCODINGS = -finput-charset=utf-8 -fexec-charset=gbk
+CFLAGS   = $(INCS) -Wall -Wextra -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS) 
